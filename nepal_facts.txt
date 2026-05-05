@@ -1,0 +1,60 @@
+NEPAL AI RESEARCH INSTITUTE — KNOWLEDGE BASE DOCUMENT
+Version 1.0 | Created for Workshop Demo Purposes
+=======================================================
+
+SECTION 1: NEPAL — GEOGRAPHY AND OVERVIEW
+
+Nepal is a landlocked country in South Asia, bordered by China to the north and India to the south, east, and west. It covers an area of approximately 147,181 square kilometers and has a population of roughly 30 million people. The capital and largest city is Kathmandu, situated in the Kathmandu Valley at an elevation of approximately 1,400 meters above sea level.
+
+Nepal is home to eight of the world's ten tallest mountains, including Mount Everest (8,848.86 meters), the highest point on Earth. The country spans five climate zones — tropical, subtropical, temperate, alpine, and Arctic — all within a relatively small geographic area. The major rivers include the Koshi, Gandaki, and Karnali, all of which eventually flow into the Ganges.
+
+SECTION 2: CULTURE AND TRADITIONS
+
+Nepal is a multi-ethnic, multilingual, and multi-religious country. Hinduism and Buddhism are the two predominant religions, and they have coexisted peacefully for centuries, sharing many temples, festivals, and traditions. Approximately 81% of the population identifies as Hindu, while 9% identifies as Buddhist.
+
+The most celebrated festival in Nepal is Dashain, a 15-day festival typically held in October. It marks the victory of the goddess Durga over the demon Mahishasura and involves family gatherings, the exchange of blessings, and the sacrifice of animals. Another major festival is Tihar, the festival of lights, which spans five days and celebrates various animals — crows, dogs, cows, and oxen — before culminating in Bhai Tika, a ceremony between brothers and sisters.
+
+SECTION 3: THE NEPAL ARTIFICIAL INTELLIGENCE SOCIETY (NAIS)
+
+The Nepal Artificial Intelligence Society (NAIS) was established in 2021 in Kathmandu with the aim of promoting AI research, education, and policy development in Nepal. NAIS currently has 340 registered members spanning academia, government, and private industry. The society publishes a quarterly journal called "Himalayan Intelligence Review" and hosts an annual conference known as Nepal AI Summit, which has been held every year since 2022.
+
+In 2023, NAIS launched the Rural AI Initiative, a program designed to bring AI-powered tools to agricultural communities in the Terai region. The initiative focuses specifically on crop disease detection using computer vision models trained on images of Nepalese crops including rice, wheat, and lentils. By the end of 2023, the program had reached 12 districts and trained over 200 local technicians.
+
+SECTION 4: AI EDUCATION IN NEPAL
+
+As of 2024, AI and machine learning courses are offered at Tribhuvan University, Pokhara University, and Kathmandu University. The most popular undergraduate AI elective is offered at the Institute of Engineering (IOE) and enrolls approximately 180 students per semester.
+
+The Bodhi Learning Festival is a fictional annual gathering — created for this demo — held every March in Patan, where AI practitioners from across Nepal present projects, conduct workshops, and demonstrate applications of AI in traditional crafts, language preservation, and environmental monitoring. The 2024 edition featured 47 presenters and attracted over 600 attendees. (Note to instructor: use this made-up festival to demonstrate hallucination — the LLM will not know about it without RAG.)
+
+SECTION 5: LANGUAGE AND NLP CHALLENGES IN NEPAL
+
+Nepal has over 120 spoken languages. Nepali (Devanagari script) is the official language and serves as the lingua franca. However, many regional languages — including Maithili, Bhojpuri, Tharu, Tamang, Newari, and Limbu — remain significantly underrepresented in NLP datasets and models.
+
+The Nepali NLP Consortium, a collaborative initiative between three universities and two private organizations, released the NepaliBERT model in 2022 — a BERT-based language model pre-trained on a corpus of 15 million Nepali sentences. NepaliBERT has been used in applications including news classification, sentiment analysis of social media, and named entity recognition for government document processing.
+
+One of the key challenges in Nepali NLP is code-switching — the practice of mixing Nepali and English within the same sentence — which is extremely common in urban, educated populations. Building models that handle this fluidly remains an open research problem as of 2024.
+
+SECTION 6: COMPUTER VISION IN NEPAL
+
+Computer vision applications in Nepal have grown significantly since 2020. Key areas of deployment include:
+
+Heritage site monitoring: The Department of Archaeology uses drone-based image capture and object detection models to monitor the condition of UNESCO World Heritage Sites including Pashupatinath Temple, Boudhanath Stupa, and the seven monument zones of the Kathmandu Valley.
+
+Disaster response: Following the 2015 earthquake, satellite imagery analysis using segmentation models was used to assess building damage across 14 districts. This application has since been refined into an early warning system that monitors landslide-prone areas in real time using camera feeds and anomaly detection models.
+
+Agriculture: The Department of Agriculture and NAIS have jointly developed a mobile application called "KrishiAI" (released in 2023) that allows farmers to photograph crop leaves and receive instant diagnosis of diseases and pest infestations. The model was trained on 45,000 annotated images across 18 crop species.
+
+SECTION 7: KEY STATISTICS FOR QUICK REFERENCE
+
+- Nepal's internet penetration rate (2024): 63%
+- Number of active AI startups in Kathmandu Valley (2024): approximately 85
+- Nepal government AI policy framework: published in 2023 under the Ministry of Communication and Information Technology
+- Percentage of Nepal's GDP from remittances: approximately 26%
+- Elevation of Kathmandu: 1,400 meters
+- Year Nepal held its first dedicated AI conference: 2022 (Nepal AI Summit, organized by NAIS)
+- NepaliBERT training corpus size: 15 million sentences
+- KrishiAI training dataset size: 45,000 annotated images
+- Bodhi Learning Festival 2024 attendees: 600 (fictional — for demo purposes)
+- NAIS membership count: 340 members
+
+END OF DOCUMENT
