@@ -7,6 +7,7 @@ Usage:
 
 Requirements:
     pip install streamlit chromadb sentence-transformers requests
+    pip install pypdf python-docx
 
 Ollama setup:
     1. Install from https://ollama.ai
@@ -17,6 +18,8 @@ import requests
 import chromadb
 import streamlit as st
 from sentence_transformers import SentenceTransformer
+from pypdf import PdfReader
+import docx
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CONFIG
@@ -204,7 +207,17 @@ def build_rag_prompt(question: str, chunks: list[str]) -> str:
         f"CONTEXT:\n{context}\n\n"
         f"QUESTION: {question}\n\nANSWER:"
     )
+def extract_text(file, file_type):
+    if file_type == "pdf":
+        reader = PdfReader(file)
+        return "\n".join(page.extract_text() or "" for page in reader.pages)
 
+    elif file_type == "docx":
+        doc = docx.Document(file)
+        return "\n".join([para.text for para in doc.paragraphs])
+
+    else:  # txt / md
+        return file.read().decode("utf-8", errors="replace")
 # ─────────────────────────────────────────────────────────────────────────────
 # MAIN UI
 # ─────────────────────────────────────────────────────────────────────────────
@@ -212,7 +225,6 @@ def build_rag_prompt(question: str, chunks: list[str]) -> str:
 def main():
     st.set_page_config(
         page_title = "RAG Chatbot — AI Workshop Day 2",
-        page_icon  = "🧠",
         layout     = "wide",
     )
 
@@ -221,7 +233,7 @@ def main():
 
     # ── Sidebar ───────────────────────────────────────────────────────────────
     with st.sidebar:
-        st.title("🧠 RAG Chatbot")
+        st.title(" RAG Chatbot")
         st.caption("AI Workshop · Day 2")
         st.divider()
 
@@ -305,13 +317,14 @@ def main():
         # ── Document upload ───────────────────────────────────────────────────
         st.subheader("📄 Document")
         uploaded_file = st.file_uploader(
-            "Upload a .txt or .md file",
-            type=["txt", "md"],
+            "Upload a document",
+            type=["txt", "md", "pdf", "docx"],
         )
 
         if uploaded_file:
             if st.button("📥 Index Document", use_container_width=True, type="primary"):
-                text = uploaded_file.read().decode("utf-8", errors="replace")
+                file_type = uploaded_file.name.split(".")[-1].lower()
+                text = extract_text(uploaded_file, file_type)
                 if len(text.strip()) < 50:
                     st.warning("File seems too short or empty.")
                 else:
@@ -347,28 +360,16 @@ def main():
             st.rerun()
 
     # ── Main chat area ────────────────────────────────────────────────────────
-    st.header("💬 Chat with your document")
+    st.header(" Chat with your document")
 
     if not active_model:
-        st.warning("👈 Select a model in the sidebar to get started.")
+        st.warning(" Select a model in the sidebar to get started.")
         st.stop()
 
     if not st.session_state.doc_indexed:
-        st.info("👈 Upload and index a document in the sidebar to get started.")
+        st.info(" Upload and index a document in the sidebar to get started.")
 
-    # Example question buttons
-    st.caption("Try an example:")
-    cols = st.columns(4)
-    examples = [
-        "What is the main topic?",
-        "List key statistics.",
-        "What does it say about AI?",
-        "Any education content?",
-    ]
-    for col, q in zip(cols, examples):
-        if col.button(q, use_container_width=True):
-            st.session_state.messages.append({"role": "user", "content": q})
-            st.rerun()
+
 
     st.divider()
 
