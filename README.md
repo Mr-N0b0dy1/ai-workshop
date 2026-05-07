@@ -7,4 +7,4 @@
 
 # AI Workshop Day 3
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mr-N0b0dy1/ai-workshop/blob/main/Day3_Colab_Notebook(1).ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mr-N0b0dy1/ai-workshop/blob/main/Day3_Colab_Notebook%20(1).ipynb)
